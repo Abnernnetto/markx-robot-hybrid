@@ -1,14 +1,14 @@
 *** Settings ***
 Documentation        Suite de testes do cadastro de tarefas
 
-Resource        ${EXECDIR}/resources/base.resource
+Resource        ../resources/base.resource
 
 Test Setup       Start session
 Test Teardown    Finish session
 
 *** Test Cases ***
 Deve poder cadastrar uma nova tarefa
-
+    [Tags]      happy
     ${task}        Set Variable        Estudar Python
     Remove task from database    ${task}
 
